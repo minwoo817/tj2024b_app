@@ -49,7 +49,7 @@ void main(){
   // String nickname = null; // 다트3부터 타입뒤에 ? 붙여서 null 안정성 보장
 
   // var : 처음 할당한 값의 타입이 결정됨
-  // dynamic : 선언된 변수는 모든 타입들이 들어올 수 있음 
+  // dynamic : 선언된 변수는 모든 타입들이 들어올 수 있음
 
 
 }
