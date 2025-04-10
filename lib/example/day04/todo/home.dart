@@ -16,7 +16,8 @@ class _HomeState extends State<Home>{
   // 3. 자바와 통신 하여 할일 목록을 조회하는 함수 선언
   void todoFindAll() async{
     try{
-      final response = await dio.get( "http://192.168.40.37:8080/day04/todos" );
+      // final response = await dio.get( "http://192.168.40.37:8080/day04/todos" );
+      final response = await dio.get( "https://improved-morgen-minwoo817-85e3049e.koyeb.app/day04/todos" );
       final data = response.data;
       // 조회 결과 없으면 [] , 조회 결과가 있으면 [ {} , {} ,{} ]
       // setState 이용하여 재 렌더링한다.
@@ -36,7 +37,8 @@ class _HomeState extends State<Home>{
   // 5. 삭제 이벤트 함수
   void todoDelete( int id ) async {
     try{
-      final response = await dio.delete('http://192.168.40.37:8080/day04/todos?id=$id');
+      // final response = await dio.delete('http://192.168.40.37:8080/day04/todos?id=$id');
+      final response = await dio.delete('https://improved-morgen-minwoo817-85e3049e.koyeb.app/day04/todos?id=$id');
       final data = response.data;
       if( data == true ){ todoFindAll(); } // 삭제 성공시 할일목록 다시 호출 하기.
     }catch(e){ print(e); }
@@ -84,7 +86,8 @@ class _HomeState extends State<Home>{
                           trailing : Row( // 하위 위젯들을 가로 배치 vs Column
                             mainAxisSize : MainAxisSize.min , // Row 배치 방법 , 오른쪽 위젯들의 넓이를 자동으로 최소 크기 할당
                             children: [ // Row 위젯의 자식 들
-                              IconButton( onPressed: ()=>{ Navigator.pushNamed(context , "/detail" , arguments : todo['id'] ) }, icon: Icon(Icons.info) , ) ,
+                              IconButton( onPressed: ()=>{ Navigator.pushNamed(context , "/update" , arguments : todo['id'] ) }, icon: Icon(Icons.edit) ) ,
+                              IconButton( onPressed: ()=>{ Navigator.pushNamed(context , "/detail" , arguments : todo['id'] ) }, icon: Icon(Icons.info) ) ,
                               IconButton( onPressed: ()=>{ todoDelete( todo['id'] ) } , icon: Icon( Icons.delete ) ),
                             ],
                           )

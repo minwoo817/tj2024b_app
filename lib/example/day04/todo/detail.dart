@@ -32,7 +32,8 @@ class _DetailState extends State<Detail>{
   Map<String,dynamic> todo = { }; // 응답 결과를 저장하는 하나의 '일정' 객체 선언
   void todoFindById( id ) async{
     try{
-      final response = await dio.get( "http://192.168.40.37:8080/day04/todos/view?id=$id");
+      // final response = await dio.get( "http://192.168.40.37:8080/day04/todos/view?id=$id");
+      final response = await dio.get( "https://improved-morgen-minwoo817-85e3049e.koyeb.app/day04/todos/view?id=$id");
       final data = response.data;
       setState(() {
         todo = data; // 응답받은 결과를 상태변수에 대입
