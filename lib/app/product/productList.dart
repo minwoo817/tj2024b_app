@@ -16,7 +16,7 @@ class _ProductListState extends State<ProductList>{
   int page = 1; // 현재 조회 중인 페이지 번호 갖는 상태변수 , 초기값 1
   List<dynamic> productList = []; // 자바서버로 부터 조회 한 제품(DTO) 목록 상태변수
   final dio = Dio(); // 자바서버 와 통신 객체
-  String baseUrl = "http://192.168.40.9:8080"; // 기본 자바서버의 URL 정의 // 환경에 따라 IP변경
+  String baseUrl = "http://192.168.40.37:8080"; // 기본 자바서버의 URL 정의 // 환경에 따라 IP변경
   // * 현재 스크롤의 상태( 위치/크기 등) 를 감지하는 컨트롤러
   // * 무한스크롤( 스크롤이 거의 바닥에 위치했을때 새로운 자료 요청 해서 추가 한다. )
   // .position : 현재 스크롤의 위치 반환 , .position.pixels : 위치를 픽셀로 반환

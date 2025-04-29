@@ -27,7 +27,7 @@ class _ProductViewState extends State<ProductView>{ // [자식위젯]
   // 1.
   Map<String , dynamic> product = {}; // 제품 1개를 저장하는 상태변수.
   final dio = Dio();
-  final baseUrl = "http://192.168.40.9:8080"; // 환경에 따라 변경
+  final baseUrl = "http://192.168.40.37:8080"; // 환경에 따라 변경
   // *
   bool isOwner = false; // 현재 로그인된 회원이 등록한 제품인지 확인 변수.
 

@@ -19,7 +19,7 @@ class _ProductRegister extends State< ProductRegister >{
   final TextEditingController ppriceController = TextEditingController(); // 제품가격
   int? cno = 1; // 카테고리 번호 // 드롭다운
   final dio = Dio();
-  final String baseUrl = "http://192.168.40.9:8080"; // 환경에 따라 변경
+  final String baseUrl = "http://192.168.40.37:8080"; // 환경에 따라 변경
 
   List<dynamic> categoryList = []; // 카테고리 목록 [ { cno : 1 , cname:"전자~" } , { cno : 2  ~~~ } ]
 
